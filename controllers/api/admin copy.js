@@ -789,12 +789,55 @@ const getContracts = async (req, res) => {
 const getPlayerContract = async (req, res) => {
   try {
     var { limit, offset, from, to, customer, id, contractStatus } = req.body
-    
-    const player = await Players.findById(id).populate('contractIds').populate('customerIds');
+    const customers = await Customers.find({ _id: { $regex: customer || '', $options: 'i' } })
+    const customerIds = customers.map(e => e._id)
+    // from = from ? moment(from) : moment('1900-01-01 00:00:00')
+    // to = to ? moment(to) : moment('2999-12-31 00:00:00')
 
-    console.log(player);
+    var aggrConds = []
+    const idMatch = { $match: { _id: mongoose.Types.ObjectId(id) } }
+    var lookup = { from: 'contracts', let: { 'contractIds': '$contractIds' } }
+    var pline = []
+    const contractMatch = { $match: { $expr: { $in: ['$_id', '$$contractIds'] } } }
+    const statusMatch = { $match: { contractStatus } }
+    const customerMatch = { $match: { $expr: { $in: ['$customerId', customerIds] } } }
 
-    res.json({ success: true, result: player })
+    var and = []
+    if (from) {
+      and.push({ $gte: ["$contractValidFrom", moment(from).toDate()] })
+    }
+    if (to) {
+      and.push({ $lte: ["$contractValidTo", moment(to).toDate()] })
+    }
+    const contractDateMatch = { $match: { $expr: { $and: and } } }
+    const skipMatch = { $skip: offset * limit }
+    const limitMatch = { $limit: limit }
+
+    pline.push(contractMatch)
+    if (contractStatus < 5) {
+      pline.push(statusMatch)
+    }
+
+    pline.push(customerMatch)
+    pline.push(contractDateMatch)
+    pline.push(skipMatch)
+    pline.push(limitMatch)
+
+    lookup.pipeline = pline
+    lookup.as = 'contractIds'
+    if (id) {
+      aggrConds.push(idMatch)
+    }
+    aggrConds.push({ $lookup: lookup })
+    const players = await Players.aggregate(aggrConds)
+    const populatedPlayers = await Players.populate(players,
+      [{
+        path: 'contractIds',
+        populate: [
+          { path: 'customerId', model: 'customers' },
+          { path: 'branches', model: 'branches' }]
+      }, { path: 'channelId' }])
+    res.json({ success: true, result: populatedPlayers })
   } catch (e) {
     console.log(e)
     res.status(400).json({ success: false, error: e.message })

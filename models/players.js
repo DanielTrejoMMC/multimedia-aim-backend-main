@@ -9,7 +9,7 @@ var playersSchema = mongoose.Schema({
   branchId: { type: mongoose.Schema.Types.String, ref: 'branches', default: null },
   channelId: { type: mongoose.Schema.Types.String, ref: 'channels', default: null },
   customerIds: [{ type: String, default: '' }],
-  contractIds: [{ type: String, default: '' }],
+  contractIds: [{ type: mongoose.Schema.Types.String, ref:'contracts', default: '' }],
   metadata: {type: mongoose.Schema.Types.String, default: ''}
 });
 
