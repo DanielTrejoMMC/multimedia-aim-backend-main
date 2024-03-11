@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smartpay-ea1b9",
+  "private_key_id": "e044930d718d46e93e11f1ddf0cfa90327f80add",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCwwNDKFq/bugOt\nsBGjAXZx5T9z2R7O0p4LAR53WbMhShnIlISXm3V8N3ehbPkIUZM2qlKkGVucZBCY\nURu1wWryOx8Wa5s73rVTU6Rm7vVQfW84bOBSCloxqVQyA5XXdXp3hGxPBif2vVXH\nibPMVloub7HMnQB4nkmmS2I1M058jNVnYFGZzDcP1L65IDR9PA/yc5Il1bozSxfu\nKsRxmEeH9KFxn7xVxn/ykKvbTZEDZjSfGoFspzBOLRGnCqLeD9p3a6d7Uvi5/TLE\nLb6GPygB3YvAm8hR6vqyBZ+DS2oVgXMdvExr6RQsesw+EbsIcanP5cdZK8+tipbE\nFAw8S40pAgMBAAECggEAAI3/rxKr0fG0f0AKiMtsDBF0cIWhk3Pqa7hrgw5fVzRn\nU6TRAbTK2pfwooC4C1mjhPa7NFP2tffubBFHwqXtEv4ygRyCATRtYenk8y8UIADf\nb3rlUqdA/zTmfxMEeQefrxkASgMymZNLM0lwV1d8svabb+ac5hlWZn+IEF4ChLY0\natZBhC7ebUT6g5JrsznK73WIB9aHCJFJReTIcbkFL+NUsYaOSsVMTKDEfKo1DOw5\nwSlHLznaA2TwFzN4+1PXQSrII2it2v2Nj8AmAJqkQ/B/kApIvHteah0lNy9fX3SN\noUcitLJVQxpSY1ENzn8denIadvdIvpGThPy6eshH/QKBgQD0TyrpSYuWQ06xtxIg\nTztsW3cCX7tQgNwV8/HC3VqGx9H+wxaQPUbjIPRndSXOnY69vhpix19DdiWVi5Lj\nNq8M9PcyhSSi+weef+gNUu3YdNptA/qvl0p75x98LP8pnaNMa8L3+xCkcgm0dLkk\nF2rydm53417J1sE/kKu92EIVxwKBgQC5NhLx7q8QpxeKCm8+hphLuurw0XDf1A7y\nZtwPeLGgFjT/YrY1panYqHN2et3YOe6vp7PCvOLN1ZnCeB8lJBJ9bAElee9auKRm\nP6eA9sTRhkC7UVure9g45tS3dsI4zJn/51/VRaV0KiffZM1w6hHzOnQaQ+jEd19t\nvAT58WeFjwKBgEWgwoQWV9gNesIfgOUAb9kkADkG+6Wn9BG1orN8zq4XCPxosWeO\nb0OQQtexhYLrWKEvKun4FGhvpaqHSufC0AULU+BsHdLtZHCB16rkdbD5LL9hIPMm\nVS4W4txLHrXHnaDMHZb7UPTtI2Lw2Us1+V787eLxRDSWJiFto+TJW5xFAoGBAI8/\n/J008CCgLDuvYGVq8uY39zk1tOjZ+omP9wrcXf4kzu7saWPK8zhI6a0s0ONJw4wG\n2Kl5MK7lU9yuzeALK2XooGZdDj0L7NPMzgCYXJh2DyEShyV2T0GLf+E6sHQAA+iD\nC4NIL/VOGbLWI3P/Bs0qW9xow+MZNS0JrIupJFmPAoGBAJZJAxBTEVE29it+X8GG\njf41S7q970U0wquivIcvFlJ/OwDV6CBC2wXEqvq3hLUjz/papmuZMgxKhd1soLqn\nXaeoN7Xw9+YRE7vRbAACWzEl8Ftd/LwjzdAZh5a7bTStdUmSQLh/XWxMUN2a98FO\nUN4NmXIV48pwjp/x5AyhXjyw\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-713sh@smartpay-ea1b9.iam.gserviceaccount.com",
+  "client_id": "104229788983510357464",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-713sh%40smartpay-ea1b9.iam.gserviceaccount.com"
+}
