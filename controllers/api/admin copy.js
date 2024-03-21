@@ -414,6 +414,9 @@ const getPlayers = async (req, res) => {
     }
     if (channels.length != 0)
       filter.channelId = { $in: channels }
+
+      console.log(filter);
+
     const players = await Players.find(
       filter).skip(offset * limit)
       .limit(limit)
@@ -829,6 +832,9 @@ const getPlayerContract = async (req, res) => {
       aggrConds.push(idMatch)
     }
     aggrConds.push({ $lookup: lookup })
+
+    console.log(JSON.stringify(aggrConds));
+
     const players = await Players.aggregate(aggrConds)
     const populatedPlayers = await Players.populate(players,
       [{

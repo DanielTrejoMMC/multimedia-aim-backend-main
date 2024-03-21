@@ -10,14 +10,15 @@ router.use('/', admin.authenticate)
 
 router.get('/loginjwt', admin.loginjwt)
 router.get('/summary', admin.getSummary)
+
 router.post('/players', admin.getPlayers)
 router.get('/player/:id', admin.getPlayer)
-
 router.post('/player/contract', admin.getPlayerContract)
 router.post('/player/create', admin.createPlayer)
 router.post('/player/:id', admin.savePlayer)
 
 router.post('/history', admin.getHistory)
+
 
 router.get('/profile', admin.getProfile)
 router.post('/profile', admin.updateProfile)
